@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "granulargamerules",
+	"version": "${version}",
+	"name": "Granular Gamerules",
+	"description": "Allows you to fine-tune certain gamerules",
+	"authors": [
+		"JackFred"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "ARR",
+	"icon": "assets/granulargamerules/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"red.jackf.granulargamerules.GranularGamerules"
+		],
+		"client": [
+			"red.jackf.granulargamerules.client.GranularGamerulesClient"
+		]
+	},
+	"mixins": [
+		"granulargamerules.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": ">=1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"yet_another_config_lib_v3": ">=3.5.0"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}
