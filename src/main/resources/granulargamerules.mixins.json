@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "red.jackf.granulargamerules.mixin",
+	"package": "red.jackf.granulargamerules.mixins",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"

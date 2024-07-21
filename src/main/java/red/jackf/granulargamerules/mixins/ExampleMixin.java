@@ -1,4 +1,4 @@
-package red.jackf.granulargamerules.mixin;
+package red.jackf.granulargamerules.mixins;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

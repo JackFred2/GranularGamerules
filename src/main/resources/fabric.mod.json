@@ -16,15 +16,20 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"red.jackf.granulargamerules.GranularGamerules"
+			"red.jackf.granulargamerules.impl.GranularGamerules"
 		],
 		"client": [
-			"red.jackf.granulargamerules.client.GranularGamerulesClient"
+			"red.jackf.granulargamerules.client.impl.GranularGamerulesClient"
 		]
 	},
 	"mixins": [
-		"granulargamerules.mixins.json"
+		"granulargamerules.mixins.json",
+		{
+			"environment": "client",
+			"config": "granulargamerules.client.mixins.json"
+		}
 	],
+	"accessWidener": "granulargamerules.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.15.11",
 		"minecraft": ">=1.21",

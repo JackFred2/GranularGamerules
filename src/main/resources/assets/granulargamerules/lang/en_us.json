@@ -1,0 +1,6 @@
+{
+  "gui.granularGamrules.expand": "Configure...",
+  "gui.granularGamrules.expand.tooltip": "%s sub-rules",
+  "gamerule.mobGriefing/creeperExplosions": "Creeper explosions destroy blocks",
+  "gamerule.mobGriefing/endermenMoveBlocks": "Endermen can pick up and place blocks"
+}

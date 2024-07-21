@@ -116,7 +116,7 @@ loom {
 		vmArgs.addAll("-Dfabric-tag-conventions-v2.missingTagTranslationWarning=VERBOSE".split(" "))
 	}
 
-	// accessWidenerPath.set(file("src/main/resources/granulargamerules.accesswidener"))
+	accessWidenerPath.set(file("src/main/resources/granulargamerules.accesswidener"))
 }
 
 dependencies {

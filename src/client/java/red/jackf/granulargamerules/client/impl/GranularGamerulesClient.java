@@ -1,4 +1,4 @@
-package red.jackf.granulargamerules.client;
+package red.jackf.granulargamerules.client.impl;
 
 import net.fabricmc.api.ClientModInitializer;
 
