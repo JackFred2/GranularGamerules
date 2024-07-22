@@ -3,12 +3,15 @@
   "package": "red.jackf.granulargamerules.client.mixins",
   "compatibilityLevel": "JAVA_21",
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 1,
+    "maxShiftBy": 3
   },
   "client": [
     "gamerulescreen.AbstractSelectionListAccessor",
-    "gamerulescreen.GameRuleScreenEntryMixin",
-    "gamerulescreen.GameRulesScreenRuleListMixin"
+    "gamerulescreen.AbstractSelectionListMixin",
+    "gamerulescreen.GameRuleEntryMixin",
+    "gamerulescreen.RuleEntryMixin",
+    "gamerulescreen.RuleListMixin"
   ],
   "mixins": [
     "gamerulescreen.RuleListVisitorMixin"

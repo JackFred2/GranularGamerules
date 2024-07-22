@@ -13,7 +13,7 @@ import red.jackf.granulargamerules.client.impl.mixinutil.GGEntryKeyHolder;
  * @author JackFred
  */
 @Mixin(EditGameRulesScreen.RuleEntry.class)
-public abstract class GameRuleScreenEntryMixin implements GGEntryKeyHolder {
+public abstract class RuleEntryMixin implements GGEntryKeyHolder {
     @Unique
     private GameRules.Key<?> key;
 

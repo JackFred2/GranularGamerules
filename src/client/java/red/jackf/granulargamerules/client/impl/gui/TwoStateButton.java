@@ -9,7 +9,7 @@ public class TwoStateButton extends Button {
     private final WidgetSprites sprites;
     private boolean state = false;
 
-    protected TwoStateButton(int x, int y, int width, int height, WidgetSprites sprites, Component message, OnPress onPress, CreateNarration narration) {
+    public TwoStateButton(int x, int y, int width, int height, WidgetSprites sprites, Component message, OnPress onPress, CreateNarration narration) {
         super(x, y, width, height, message, b -> onPress.onPress((TwoStateButton) b), narration);
         this.sprites = sprites;
     }
