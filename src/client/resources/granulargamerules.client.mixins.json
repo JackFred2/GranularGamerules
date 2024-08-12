@@ -7,13 +7,7 @@
     "maxShiftBy": 3
   },
   "client": [
-    "gamerulescreen.AbstractSelectionListAccessor",
-    "gamerulescreen.AbstractSelectionListMixin",
-    "gamerulescreen.GameRuleEntryMixin",
-    "gamerulescreen.RuleEntryMixin",
-    "gamerulescreen.RuleListMixin"
   ],
   "mixins": [
-    "gamerulescreen.RuleListVisitorMixin"
   ]
 }
