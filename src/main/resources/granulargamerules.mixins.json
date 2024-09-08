@@ -1,11 +1,12 @@
 {
-	"required": true,
-	"package": "red.jackf.granulargamerules.mixins",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "red.jackf.granulargamerules.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "GameRuleCommandMixin",
+    "GameRulesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
