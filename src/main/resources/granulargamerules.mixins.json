@@ -5,11 +5,11 @@
   "mixins": [
     "GameRuleCommandMixin",
     "GameRulesMixin",
-    "mobgriefing.BreakDoorGoalMixin",
-    "mobgriefing.EndermanGoalsMixin",
-    "mobgriefing.FarmBlockMixin",
-    "mobgriefing.ravager.CropBlockMixin",
-    "mobgriefing.ravager.RavagerMixin"
+    "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin",
+    "mobgriefing.endermenmoveblocks.EndermanGoalsMixin",
+    "mobgriefing.mobstramplefarmland.FarmBlockMixin",
+    "mobgriefing.ravagersdestroyplants.CropBlockMixin",
+    "mobgriefing.ravagersdestroyplants.RavagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
