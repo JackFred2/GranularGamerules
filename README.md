@@ -20,9 +20,9 @@ A mod to fine tune your gamerules.
 - Wither breaks blocks on damage
 - Endermen place/break blocks ✅
 - Evokers turn blue sheep red
-- Ravagers destroy leaves ✅
-- Ravagers destroy crops
-- Ravagers destroy flowers
+- Ravagers destroy ✅
+  - ..leaves
+  - ..crops
 - Silverfish enter stone
 - Silverfish wake others up from infested stone
 - Ghast fireballs ignite blocks
