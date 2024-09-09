@@ -6,7 +6,9 @@
     "GameRuleCommandMixin",
     "GameRulesMixin",
     "mobgriefing.BreakDoorGoalMixin",
-    "mobgriefing.EndermanGoalsMixin"
+    "mobgriefing.EndermanGoalsMixin",
+    "mobgriefing.ravager.CropBlockMixin",
+    "mobgriefing.ravager.RavagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

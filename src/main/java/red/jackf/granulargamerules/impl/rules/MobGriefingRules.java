@@ -8,6 +8,7 @@ import red.jackf.granulargamerules.impl.GranularGamerules;
 public class MobGriefingRules {
     public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> ZOMBIES_BREAK_DOORS = create("zombiesBreakDoors");
+    public static final GameRules.Key<GameRules.BooleanValue> RAVAGERS_DESTROY_PLANTS = create("ravagersDestroyPlants");
 
     public static void setup() {
         // no-op
