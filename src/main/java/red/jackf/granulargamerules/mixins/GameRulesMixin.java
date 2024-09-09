@@ -1,12 +1,9 @@
 package red.jackf.granulargamerules.mixins;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.DynamicLike;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.GameRules;
 import org.jetbrains.annotations.Nullable;
@@ -20,11 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import red.jackf.granulargamerules.impl.GranularGamerules;
 import red.jackf.granulargamerules.impl.mixinutil.GGGameRules;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /**
  * Used to store deferred game rules and persist them across saves.
@@ -36,69 +29,64 @@ public abstract class GameRulesMixin implements GGGameRules {
     private static final String TAG_KEY = "_ggDeferrals";
 
     @Unique
-    private final Set<GameRules.Key<?>> deferredGameRuleIds = new HashSet<>();
+    private final Map<GameRules.Key<?>, Boolean> deferralMap = new HashMap<>();
 
     @Override
     public void gg$setDeferred(GameRules.Key<?> key, boolean isDeferred) {
-        if (isDeferred) {
-            if (GranularGamerules.getParentRule(key).isEmpty()) {
-                GranularGamerules.LOGGER.warn("Tried to mark non-parented gamerule as deferred: {}", key.getId());
-                return;
-            }
-            deferredGameRuleIds.add(key);
-        } else {
-            deferredGameRuleIds.remove(key);
+        if (!GranularGamerules.hasParent(key)) {
+            GranularGamerules.LOGGER.warn("Tried to mark non-parented gamerule: {}", key.getId());
+            return;
         }
+
+        deferralMap.put(key, isDeferred);
     }
 
     @Override
     public boolean gg$isDeferred(GameRules.Key<?> key) {
-        return deferredGameRuleIds.contains(key);
+        return deferralMap.getOrDefault(key, false);
     }
 
     @ModifyReturnValue(method = "copy", at = @At("RETURN"))
     private GameRules copyDeferred(GameRules copy) {
         GameRulesMixin other = ((GameRulesMixin) (Object) copy);
         //noinspection DataFlowIssue
-        other.deferredGameRuleIds.clear();
-        other.deferredGameRuleIds.addAll(this.deferredGameRuleIds);
+        other.deferralMap.clear();
+        other.deferralMap.putAll(this.deferralMap);
         return copy;
     }
 
     @Inject(method = "assignFrom", at = @At("TAIL"))
     private void assignDeferredFrom(GameRules source, @Nullable MinecraftServer server, CallbackInfo ci) {
         GameRulesMixin other = ((GameRulesMixin) (Object) source);
-        this.deferredGameRuleIds.clear();
+        this.deferralMap.clear();
         //noinspection DataFlowIssue
-        this.deferredGameRuleIds.addAll(other.deferredGameRuleIds);
+        this.deferralMap.putAll(other.deferralMap);
     }
 
     @ModifyReturnValue(method = "createTag", at = @At("RETURN"))
     private CompoundTag addDeferredToTag(CompoundTag original) {
-        var list = new ListTag();
+        var map = new CompoundTag();
 
-        for (GameRules.Key<?> key : this.deferredGameRuleIds) {
-            list.add(StringTag.valueOf(key.getId()));
-        }
+        this.rules.forEach((key, value) -> {
+            if (GranularGamerules.hasParent(key)) {
+                map.putBoolean(key.getId(), this.deferralMap.getOrDefault(key, true));
+            }
+        });
 
-        original.put(TAG_KEY, list);
+        original.put(TAG_KEY, map);
 
         return original;
     }
 
     @Inject(method = "loadFromTag", at = @At("RETURN"))
     private void loadDeferredFromTag(DynamicLike<?> dynamic, CallbackInfo ci) {
-        Set<String> deferredIds = dynamic.get(TAG_KEY).orElseEmptyList().asStream()
-                .map(Dynamic::asString)
-                .filter(DataResult::isSuccess)
-                .map(DataResult::getOrThrow)
-                .collect(Collectors.toSet());
+        Dynamic<?> deferredIds = dynamic.get(TAG_KEY).orElseEmptyMap();
 
-        this.deferredGameRuleIds.clear();
+        this.deferralMap.clear();
 
         this.rules.forEach((key, value) -> {
-            if (deferredIds.contains(key.getId())) {
-                this.deferredGameRuleIds.add(key);
+            if (GranularGamerules.hasParent(key)) {
+                this.deferralMap.put(key, deferredIds.get(key.getId()).asBoolean(true));
             }
         });
     }

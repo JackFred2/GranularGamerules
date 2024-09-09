@@ -6,14 +6,16 @@ import net.minecraft.world.level.GameRules;
 import red.jackf.granulargamerules.impl.GranularGamerules;
 
 public class MobGriefingRules {
-    public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks", true);
+    public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks");
+    public static final GameRules.Key<GameRules.BooleanValue> ZOMBIES_BREAK_DOORS = create("zombiesBreakDoors");
 
     public static void setup() {
         // no-op
     }
 
-    private static GameRules.Key<GameRules.BooleanValue> create(String name, boolean defaultValue) {
+    private static GameRules.Key<GameRules.BooleanValue> create(String name) {
         var parent = GameRules.RULE_MOBGRIEFING;
+        var defaultValue = true;
 
         String ruleId = parent.getId() + "/" + name;
         GameRules.Key<GameRules.BooleanValue> rule = GameRuleRegistry.register(ruleId, parent.getCategory(), GameRuleFactory.createBooleanRule(defaultValue));

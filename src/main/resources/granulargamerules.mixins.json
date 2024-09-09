@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "GameRuleCommandMixin",
-    "GameRulesMixin"
+    "GameRulesMixin",
+    "mobgriefing.BreakDoorGoalMixin",
+    "mobgriefing.EndermanGoalsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

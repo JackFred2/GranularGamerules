@@ -35,6 +35,10 @@ public class GranularGamerules implements ModInitializer {
         PARENT_GAMERULES.put(child, parent);
     }
 
+    public static boolean hasParent(GameRules.Key<?> key) {
+        return PARENT_GAMERULES.containsKey(key);
+    }
+
     public static <T extends GameRules.Value<T>> Optional<GameRules.Key<T>> getParentRule(GameRules.Key<T> child) {
         //noinspection unchecked
         return Optional.ofNullable((GameRules.Key<T>) PARENT_GAMERULES.get(child));
