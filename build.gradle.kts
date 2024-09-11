@@ -127,6 +127,7 @@ dependencies {
 		parchment("org.parchmentmc.data:parchment-${properties["parchment_version"]}@zip")
 	})
 	modImplementation("net.fabricmc:fabric-loader:${properties["loader_version"]}")
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.5.0-beta.3")!!)!!)
 
 	include(modApi("red.jackf.jackfredlib:jackfredlib:${properties["jackfredlib_version"]}")!!)
 

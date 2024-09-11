@@ -11,6 +11,8 @@ import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class GranularGamerules implements ModInitializer {
     public static final String ID = "granulargamerules";
@@ -42,5 +44,13 @@ public class GranularGamerules implements ModInitializer {
     public static <T extends GameRules.Value<T>> Optional<GameRules.Key<T>> getParentRule(GameRules.Key<T> child) {
         //noinspection unchecked
         return Optional.ofNullable((GameRules.Key<T>) PARENT_GAMERULES.get(child));
+    }
+
+    public static <T extends GameRules.Value<T>> Set<GameRules.Key<T>> getChildRules(GameRules.Key<T> parent) {
+        //noinspection unchecked
+        return PARENT_GAMERULES.entrySet().stream()
+                .filter(entry -> entry.getValue() == parent)
+                .map(entry -> (GameRules.Key<T>) entry.getKey())
+                .collect(Collectors.toSet());
     }
 }
