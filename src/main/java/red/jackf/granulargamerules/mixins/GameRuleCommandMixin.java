@@ -36,7 +36,7 @@ public class GameRuleCommandMixin {
 
     @WrapOperation(method = "queryRule", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/GameRules;getRule(Lnet/minecraft/world/level/GameRules$Key;)Lnet/minecraft/world/level/GameRules$Value;"))
     private static <T extends GameRules.Value<T>> T getDeferredRule(GameRules instance, GameRules.Key<T> key, Operation<T> original) {
-        if (GGGameRules.isDeferred(instance, key)) {
+        if (GranularGamerules.hasParent(key) && GGGameRules.isDeferred(instance, key)) {
             var parent = GranularGamerules.getParentRule(key);
             if (parent.isPresent()) {
                 key = parent.get();
@@ -49,7 +49,7 @@ public class GameRuleCommandMixin {
     @WrapOperation(method = "method_51989", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/chat/Component;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;"))
     private static <T extends GameRules.Value<T>> MutableComponent emphasiseDeferred(String id, Object[] args, Operation<MutableComponent> original, GameRules.Key<T> key) {
         if (gameRules.hasValue() && args.length >= 2) {
-            if (GGGameRules.isDeferred(gameRules.pop(), key)) {
+            if (GranularGamerules.hasParent(key) && GGGameRules.isDeferred(gameRules.pop(), key)) {
                 Style style = Style.EMPTY.withColor(ChatFormatting.YELLOW)
                         .withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                 Component.literal(GranularGamerules.getParentRule(key).map(GameRules.Key::getId).orElse("<unknown parent>"))));

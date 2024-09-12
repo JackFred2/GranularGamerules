@@ -1,3 +1,9 @@
 {
-
+  "gamerule.mobGriefing/endermenMoveBlocks": "Endermen move blocks",
+  "gamerule.mobGriefing/mobsTrampleFarmland": "Mobs trample farmland",
+  "gamerule.mobGriefing/ravagersDestroyPlants": "Ravagers destroy plants",
+  "gamerule.mobGriefing/zombiesBreakDoors": "Zombies break doors",
+  "gui.granularGamerules.expand": "Expand",
+  "gui.granularGamerules.deferred": "Deferred to %s",
+  "gui.granularGamerules.notDeferred": "Not deferred"
 }

@@ -43,7 +43,7 @@ public abstract class GameRulesMixin implements GGGameRules {
 
     @Override
     public boolean gg$isDeferred(GameRules.Key<?> key) {
-        return deferralMap.getOrDefault(key, false);
+        return deferralMap.getOrDefault(key, true);
     }
 
     @ModifyReturnValue(method = "copy", at = @At("RETURN"))

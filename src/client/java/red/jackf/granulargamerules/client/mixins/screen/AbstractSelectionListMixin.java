@@ -69,7 +69,7 @@ public abstract class AbstractSelectionListMixin<E extends AbstractSelectionList
         if ((Object) this instanceof EditGameRulesScreen.RuleList)
             if (entryIndex >= 0 && entryIndex < this.getItemCount())
                 if (this.getEntry(entryIndex) instanceof GGGameRuleEntry gameRuleEntry && gameRuleEntry.gg$hasAdditions())
-                    left = left - ChildRulesHolder.BUTTON_LEFT_OFFSET - 1;
+                    left = left - 24;
         return operation.call(mouseX, left);
     }
 }

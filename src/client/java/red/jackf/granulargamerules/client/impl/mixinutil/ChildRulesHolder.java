@@ -15,19 +15,19 @@ import java.util.function.Supplier;
 
 public class ChildRulesHolder {
     private static final WidgetSprites BUTTON_SPRITES = new WidgetSprites(
-            GranularGamerules.id("expanded"),
-            GranularGamerules.id("collapsed"),
-            GranularGamerules.id("expanded_highlighted"),
-            GranularGamerules.id("collapsed_highlighted")
+            GranularGamerules.id("group/expanded"),
+            GranularGamerules.id("group/collapsed"),
+            GranularGamerules.id("group/expanded_highlighted"),
+            GranularGamerules.id("group/collapsed_highlighted")
     );
 
-    public static final int BUTTON_LEFT_OFFSET = 20;
+    public static final int BUTTON_LEFT_OFFSET = 24;
 
     public final List<EditGameRulesScreen.GameRuleEntry> childEntries;
     private final EditGameRulesScreen.GameRuleEntry myEntry;
     private final EditGameRulesScreen.RuleList ruleList;
     public boolean childrenShown = false;
-    public final TwoStateButton expandButton = new TwoStateButton(0, 0, 16, 16, BUTTON_SPRITES, Component.empty(), this::cycleState, Supplier::get);
+    public final TwoStateButton expandButton = new TwoStateButton(0, 0, 20, 20, BUTTON_SPRITES, Component.empty(), this::cycleState, Supplier::get);
 
     public ChildRulesHolder(Collection<EditGameRulesScreen.GameRuleEntry> childEntries, EditGameRulesScreen.GameRuleEntry myEntry, EditGameRulesScreen.RuleList ruleList) {
         this.childEntries = ImmutableList.copyOf(childEntries);
