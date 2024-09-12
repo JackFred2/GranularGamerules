@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import red.jackf.granulargamerules.client.impl.mixinutil.ChildRulesHolder;
 import red.jackf.granulargamerules.client.impl.mixinutil.GGGameRuleEntry;
 import red.jackf.granulargamerules.client.impl.screen.GroupRenderer;
 import red.jackf.granulargamerules.client.impl.util.ListUtil;

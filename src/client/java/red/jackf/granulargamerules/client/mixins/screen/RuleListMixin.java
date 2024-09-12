@@ -2,6 +2,8 @@ package red.jackf.granulargamerules.client.mixins.screen;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.MultimapBuilder;
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -61,7 +63,9 @@ public abstract class RuleListMixin extends ContainerObjectSelectionList<EditGam
         }
     }
 
-    @Inject(method = "renderWidget", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/worldselection/EditGameRulesScreen$RuleList;getHovered()Lnet/minecraft/client/gui/components/AbstractSelectionList$Entry;", shift = At.Shift.BY, by = 3), cancellable = true)
+    @Definition(id = "ruleEntry", local = @Local(type = EditGameRulesScreen.RuleEntry.class))
+    @Expression("ruleEntry != null")
+    @Inject(method = "renderWidget", at = @At(value = "MIXINEXTRAS:EXPRESSION"), cancellable = true)
     private void changeTooltipForButton(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci, @Local EditGameRulesScreen.RuleEntry entry) {
         if (entry instanceof GGGameRuleEntry gameRuleEntry) {
             Optional<List<FormattedCharSequence>> tooltipOverride = gameRuleEntry.gg$getTooltipOverride();
