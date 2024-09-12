@@ -22,7 +22,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Debug(export = true)
 @Mixin(AbstractSelectionList.class)
 public abstract class AbstractSelectionListMixin<E extends AbstractSelectionList.Entry<E>> {
 

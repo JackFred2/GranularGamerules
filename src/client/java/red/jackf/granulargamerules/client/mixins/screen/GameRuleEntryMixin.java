@@ -97,14 +97,14 @@ public abstract class GameRuleEntryMixin extends EditGameRulesScreen.RuleEntry i
     @Override
     public Optional<List<FormattedCharSequence>> gg$getTooltipOverride() {
         if (this.childRulesHolder != null) {
-            if (this.childRulesHolder.expandButton.isHoveredOrFocused()) {
+            if (this.childRulesHolder.expandButton.isHovered()) {
                 return Optional.of(List.of(
                         Component.translatable("gui.granularGamerules.expand").withStyle(ChatFormatting.YELLOW).getVisualOrderText(),
                         GranularGamerules.MOD_TITLE.copy().withStyle(ChatFormatting.GRAY).getVisualOrderText()
                 ));
             }
         } else if (this.deferrableHolder != null) {
-            if (this.deferrableHolder.checkboxButton.isHoveredOrFocused()) {
+            if (this.deferrableHolder.checkboxButton.isHovered()) {
                 if (this.deferrableHolder.checkboxButton.isChecked()) {
                     return Optional.of(List.of(
                             Component.translatable("gui.granularGamerules.deferred", Component.translatable(this.parentKey.getId()).withStyle(ChatFormatting.WHITE)).withStyle(ChatFormatting.YELLOW).getVisualOrderText()
