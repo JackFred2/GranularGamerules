@@ -41,7 +41,7 @@ Not all of these will be done, just most likely
   - Ghast Fireballs
   - Wither initial explosion
   - Wither projectiles
-- Falling mobs destroy farmland
+- Falling mobs destroy farmland ✅
 
 ## (Dedicated Server) Fake game rules
 
