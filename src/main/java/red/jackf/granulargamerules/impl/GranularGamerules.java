@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import red.jackf.granulargamerules.impl.config.GGConfig;
 import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
 
 import java.util.HashMap;
@@ -28,6 +29,8 @@ public class GranularGamerules implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        GGConfig.INSTANCE.load();
+
         MobGriefingRules.setup();
 
         GGCommand.setup();

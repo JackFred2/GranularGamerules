@@ -1,6 +1,7 @@
 package red.jackf.granulargamerules.impl;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.ChatFormatting;
@@ -22,12 +23,17 @@ public class GGCommand {
         });
     }
 
+    public static LiteralArgumentBuilder<CommandSourceStack> makeFakeGameruleRoot() {
+        return Commands.literal("gamerule")
+                .requires(commandSourceStack -> commandSourceStack.hasPermission(2));
+    }
+
     private static <T extends GameRules.Value<T>> void possiblyMakeDeferOption(CommandDispatcher<CommandSourceStack> dispatcher, GameRules.Key<T> key) {
         var parent = GranularGamerules.getParentRule(key);
 
         if (parent.isPresent())
-            dispatcher.register(Commands.literal("gamerule")
-                .then(Commands.literal(key.getId())
+            dispatcher.register(makeFakeGameruleRoot()
+                    .then(Commands.literal(key.getId())
                     .then(Commands.literal("defer")
                         .executes(ctx -> GGCommand.setDeferred(ctx, key)))));
     }

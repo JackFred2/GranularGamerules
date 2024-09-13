@@ -4,6 +4,8 @@ A mod to fine tune your gamerules.
 
 ## Mob Griefing
 
+Not all of these will be done, just most likely
+
 - Weaving Effect Places Webs 
 - Wither places wither rose down
 - Mobs pick up items
@@ -41,6 +43,10 @@ A mod to fine tune your gamerules.
   - Wither projectiles
 - Falling mobs destroy farmland
 
-## PvP & Enable Command Block rules
+## (Dedicated Server) Fake game rules
 
-Fake overlays to the /gamerule command; just updates the backing `server.properties`
+- Pvp
+- Allow Flight
+- Enable Command Block
+
+Added to the /gamerule command, updates the backing server.properties

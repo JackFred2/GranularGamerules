@@ -11,6 +11,10 @@
     "mobgriefing.ravagersdestroyplants.CropBlockMixin",
     "mobgriefing.ravagersdestroyplants.RavagerMixin"
   ],
+  "server": [
+    "dedicated.DedicatedServerAccessor",
+    "dedicated.SettingsAccessor"
+  ],
   "injectors": {
     "defaultRequire": 1
 	}

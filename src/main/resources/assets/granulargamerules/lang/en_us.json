@@ -5,5 +5,9 @@
   "gamerule.mobGriefing/zombiesBreakDoors": "Zombies break doors",
   "gui.granularGamerules.expand": "Expand",
   "gui.granularGamerules.deferred": "Deferred to %s",
-  "gui.granularGamerules.notDeferred": "Not deferred"
+  "gui.granularGamerules.notDeferred": "Not deferred",
+
+  "yacl3.config.granulargamerules:main.category.main": "Granular Gamerules",
+  "yacl3.config.granulargamerules:main.enableFakeServerRules": "Enable fake server gamerules",
+  "yacl3.config.granulargamerules:main.enableFakeServerRules.desc": "(Dedicated Servers Only) Whether to enable fake gamerules for pvp, enableCommandBlock or allowFlight."
 }

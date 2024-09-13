@@ -20,6 +20,12 @@
 		],
 		"client": [
 			"red.jackf.granulargamerules.client.impl.GranularGamerulesClient"
+		],
+		"server": [
+			"red.jackf.granulargamerules.impl.dedicated.GranularGamerulesDedicated"
+		],
+		"modmenu": [
+			"red.jackf.granulargamerules.client.impl.GGModMenu"
 		]
 	},
 	"mixins": [
