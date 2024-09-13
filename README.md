@@ -45,8 +45,8 @@ Not all of these will be done, just most likely
 
 ## (Dedicated Server) Fake game rules
 
-- Pvp
-- Allow Flight
-- Enable Command Block
+- Pvp ✅
+- Allow Flight ✅
+- Enable Command Block ✅
 
 Added to the /gamerule command, updates the backing server.properties
