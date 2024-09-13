@@ -13,7 +13,8 @@
   ],
   "server": [
     "dedicated.DedicatedServerAccessor",
-    "dedicated.SettingsAccessor"
+    "dedicated.SettingsAccessor",
+    "dedicated.PlayerListAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

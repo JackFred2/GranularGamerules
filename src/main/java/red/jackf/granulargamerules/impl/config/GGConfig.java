@@ -19,6 +19,6 @@ public class GGConfig {
 
     @AutoGen(category = "main")
     @Boolean(formatter = Boolean.Formatter.YES_NO, colored = true)
-    @SerialEntry(comment = "(Dedicated Servers Only) Whether to enable fake gamerules for pvp, enableCommandBlock or allowFlight.")
+    @SerialEntry(comment = "(Dedicated Servers Only) Whether to enable fake gamerules for various server.properties fields.")
     public boolean enableFakeServerRules = true;
 }

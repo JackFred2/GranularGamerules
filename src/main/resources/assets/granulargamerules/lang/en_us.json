@@ -9,5 +9,5 @@
 
   "yacl3.config.granulargamerules:main.category.main": "Granular Gamerules",
   "yacl3.config.granulargamerules:main.enableFakeServerRules": "Enable fake server gamerules",
-  "yacl3.config.granulargamerules:main.enableFakeServerRules.desc": "(Dedicated Servers Only) Whether to enable fake gamerules for pvp, enableCommandBlock or allowFlight."
+  "yacl3.config.granulargamerules:main.enableFakeServerRules.desc": "(Dedicated Servers Only) Whether to enable fake gamerules for various server.properties fields."
 }
