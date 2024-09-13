@@ -2,6 +2,8 @@
   "gamerule.mobGriefing/endermenMoveBlocks": "Endermen move blocks",
   "gamerule.mobGriefing/mobsTrampleFarmland": "Mobs trample farmland",
   "gamerule.mobGriefing/ravagersDestroyPlants": "Ravagers destroy plants",
+  "gamerule.mobGriefing/silverfishEnterStone": "Silverfish enter stone",
+  "gamerule.mobGriefing/silverfishWakeFriends": "Silverfish wake friends",
   "gamerule.mobGriefing/zombiesBreakDoors": "Zombies break doors",
   "gui.granularGamerules.expand": "Expand",
   "gui.granularGamerules.deferred": "Deferred to %s",

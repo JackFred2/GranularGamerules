@@ -5,16 +5,18 @@
   "mixins": [
     "GameRuleCommandMixin",
     "GameRulesMixin",
-    "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin",
     "mobgriefing.endermenmoveblocks.EndermanGoalsMixin",
     "mobgriefing.mobstramplefarmland.FarmBlockMixin",
     "mobgriefing.ravagersdestroyplants.CropBlockMixin",
-    "mobgriefing.ravagersdestroyplants.RavagerMixin"
+    "mobgriefing.ravagersdestroyplants.RavagerMixin",
+    "mobgriefing.silverfishbreakstoneonexit.SilverfishWakeUpFriendsGoalMixin",
+    "mobgriefing.silverfishenterstone.SilverfishMergeWithStoneGoalMixin",
+    "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin"
   ],
   "server": [
     "dedicated.DedicatedServerAccessor",
-    "dedicated.SettingsAccessor",
-    "dedicated.PlayerListAccessor"
+    "dedicated.PlayerListAccessor",
+    "dedicated.SettingsAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

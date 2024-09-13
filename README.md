@@ -25,8 +25,8 @@ Not all of these will be done, just most likely
 - Ravagers destroy ✅
   - ..leaves
   - ..crops
-- Silverfish enter stone
-- Silverfish wake others up from infested stone
+- Silverfish enter stone ✅
+- Silverfish wake others up from infested stone ✅
 - Ghast fireballs ignite blocks
 - Mob launched projectiles (blaze fireballs, skeleton arrows)
   - Ignite campfires
@@ -48,10 +48,10 @@ Not all of these will be done, just most likely
 - Pvp ✅
 - Allow Flight ✅
 - Enable Command Block ✅
-- Entity View Distance Percentage
-- Spawn Protection Radius
-- View Distance
-- Simulation Distance
-- Max Players
+- Entity View Distance Percentage ✅
+- Spawn Protection Radius ✅
+- View Distance ✅
+- Simulation Distance ✅
+- Max Players ✅
 
 Added to the /gamerule command, updates the backing server.properties
