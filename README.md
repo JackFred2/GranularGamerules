@@ -8,9 +8,9 @@ Not all of these will be done, just most likely
 
 - Weaving Effect Places Webs 
 - Wither places wither rose down
-- Mobs pick up items
-  - Allays pick up items
-  - Piglins pick up gold
+- Mobs pick up items ✅
+  - Allays pick up items ✅
+  - Piglins pick up gold ✅
 - Villagers work farmland
 - Zombies break doors ✅
 - Sheep eat grass
@@ -21,7 +21,7 @@ Not all of these will be done, just most likely
 - Ender dragon breaks non-end blocks
 - Wither breaks blocks on damage
 - Endermen place/break blocks ✅
-- Evokers turn blue sheep red
+- Evokers turn blue sheep red ✅
 - Ravagers destroy ✅
   - ..leaves
   - ..crops

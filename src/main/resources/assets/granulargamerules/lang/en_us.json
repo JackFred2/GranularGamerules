@@ -1,5 +1,6 @@
 {
   "gamerule.mobGriefing/endermenMoveBlocks": "Endermen move blocks",
+  "gamerule.mobGriefing/evokersWololo": "Evokers dye blue sheep red",
   "gamerule.mobGriefing/itemsTakenByAllays": "Allays can pick up items",
   "gamerule.mobGriefing/itemsTakenByOthers": "Other mobs can pick up items",
   "gamerule.mobGriefing/itemsTakenByPiglins": "Piglins can pick up items",

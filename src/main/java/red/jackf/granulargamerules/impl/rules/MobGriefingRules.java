@@ -7,6 +7,7 @@ import red.jackf.granulargamerules.impl.GranularGamerules;
 
 public class MobGriefingRules {
     public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks");
+    public static final GameRules.Key<GameRules.BooleanValue> EVOKERS_WOLOLO = create("evokersWololo");
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_ALLAYS = create("itemsTakenByAllays");
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_OTHERS = create("itemsTakenByOthers");
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_PIGLINS = create("itemsTakenByPiglins");
