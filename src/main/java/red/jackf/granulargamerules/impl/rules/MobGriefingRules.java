@@ -1,11 +1,11 @@
 package red.jackf.granulargamerules.impl.rules;
 
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.world.level.GameRules;
-import red.jackf.granulargamerules.impl.GranularGamerules;
 
 public class MobGriefingRules {
+    private static final Utils.RuleGenerator<GameRules.BooleanValue> GENERATOR = Utils.createGenerator(GameRules.RULE_MOBGRIEFING, true, GameRuleFactory::createBooleanRule);
+
     public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> EVOKERS_WOLOLO = create("evokersWololo");
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_ALLAYS = create("itemsTakenByAllays");
@@ -23,13 +23,6 @@ public class MobGriefingRules {
     }
 
     private static GameRules.Key<GameRules.BooleanValue> create(String name) {
-        var parent = GameRules.RULE_MOBGRIEFING;
-        var defaultValue = true;
-
-        String ruleId = parent.getId() + "/" + name;
-        GameRules.Key<GameRules.BooleanValue> rule = GameRuleRegistry.register(ruleId, parent.getCategory(), GameRuleFactory.createBooleanRule(defaultValue));
-        GranularGamerules.add(rule, parent);
-
-        return rule;
+        return GENERATOR.create(name);
     }
 }

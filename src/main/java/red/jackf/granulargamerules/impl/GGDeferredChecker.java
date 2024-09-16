@@ -8,6 +8,10 @@ import red.jackf.granulargamerules.impl.mixinutil.GGGameRules;
 import java.util.Optional;
 import java.util.function.Function;
 
+/**
+ * Empty optional -> deferred
+ * Otherwise, value of rule
+ */
 public class GGDeferredChecker {
     public static Optional<Boolean> getBoolean(GameRules rules, GameRules.Key<GameRules.BooleanValue> key) {
         return get(rules, key, rules::getBoolean);

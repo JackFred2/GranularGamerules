@@ -15,7 +15,11 @@
     "mobgriefing.silverfishbreakstoneonexit.SilverfishWakeUpFriendsGoalMixin",
     "mobgriefing.silverfishenterstone.SilverfishMergeWithStoneGoalMixin",
     "mobgriefing.wololo.EvokerWololoSpellGoalMixin",
-    "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin"
+    "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin",
+    "universalanger.HurtByTargetGoalMixin",
+    "universalanger.NeutralMobMixin",
+    "universalanger.PiglinAiMixin",
+    "universalanger.ResetUniversalAngerTargetGoalMixin"
   ],
   "server": [
     "dedicated.DedicatedServerAccessor",
