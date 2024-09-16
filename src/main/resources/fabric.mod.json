@@ -3,13 +3,13 @@
 	"id": "granulargamerules",
 	"version": "${version}",
 	"name": "Granular Gamerules",
-	"description": "Allows you to fine-tune certain gamerules",
+	"description": "Allows you to fine-tune certain gamerules, and provides some utility rules for dedicated servers.",
 	"authors": [
 		"JackFred"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"issues": "https://github.com/JackFred2/GranularGamerules/issues",
+		"sources": "https://github.com/JackFred2/GranularGamerules"
 	},
 	"license": "ARR",
 	"icon": "assets/granulargamerules/icon.png",
@@ -45,5 +45,13 @@
 	},
 	"suggests": {
 		"modmenu": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.kofi": "https://ko-fi.com/jackfred",
+				"modmenu.wiki": "https://docs.jackf.red/granular-gamerules/"
+			}
+		}
 	}
 }

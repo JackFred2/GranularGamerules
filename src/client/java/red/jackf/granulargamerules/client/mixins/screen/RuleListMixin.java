@@ -44,7 +44,7 @@ public abstract class RuleListMixin extends ContainerObjectSelectionList<EditGam
         for (Iterator<EditGameRulesScreen.RuleEntry> iterator = this.children().iterator(); iterator.hasNext(); ) {
             EditGameRulesScreen.RuleEntry entry = iterator.next();
             if (entry instanceof EditGameRulesScreen.GameRuleEntry gameRuleEntry && entry instanceof GGGameRuleEntry ggEntry) {
-                Optional<? extends GameRules.Key<?>> parent = GranularGamerules.getParentRule(ggEntry.gg$getGameruleKey());
+                Optional<? extends GameRules.Key<?>> parent = GranularGamerules.getVisualParent(ggEntry.gg$getGameruleKey());
                 if (parent.isPresent()) {
                     ggEntry.gg$setParentGameruleKey(parent.get(), rules);
                     keyToChildEntries.put(parent.get(), gameRuleEntry);

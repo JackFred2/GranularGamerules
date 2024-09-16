@@ -46,7 +46,7 @@ public abstract class AbstractSelectionListMixin<E extends AbstractSelectionList
 
                 int offset = index - ListUtil.getIndexOf(this.children(), entry2 -> entry2 instanceof GGGameRuleEntry ruleEntry2 && ruleEntry2.gg$getGameruleKey() == key);
 
-                final int height2 = this.itemHeight * (GranularGamerules.getChildRules(key).size() + 1);
+                final int height2 = this.itemHeight * (GranularGamerules.getVisualChildren(key).size() + 1);
 
                 GroupRenderer.render(guiGraphics, left, top - this.itemHeight * offset, width, height2);
             }

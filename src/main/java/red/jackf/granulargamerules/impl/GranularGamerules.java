@@ -7,6 +7,7 @@ import net.minecraft.world.level.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import red.jackf.granulargamerules.impl.config.GGConfig;
+import red.jackf.granulargamerules.impl.rules.MiscRules;
 import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
 import red.jackf.granulargamerules.impl.rules.UniversalAngerRules;
 
@@ -26,6 +27,7 @@ public class GranularGamerules implements ModInitializer {
     }
 
     // child to parent
+    private static final Map<GameRules.Key<?>, GameRules.Key<?>> DEFERRABLE_GAMERULES = new HashMap<>();
     private static final Map<GameRules.Key<?>, GameRules.Key<?>> PARENT_GAMERULES = new HashMap<>();
 
     @Override
@@ -34,28 +36,39 @@ public class GranularGamerules implements ModInitializer {
 
         MobGriefingRules.setup();
         UniversalAngerRules.setup();
+        MiscRules.setup();
 
         GGCommand.setup();
     }
 
-    public static <T extends GameRules.Value<T>> void add(GameRules.Key<T> child, GameRules.Key<T> parent) {
+    public static void setVisualParent(GameRules.Key<?> child, GameRules.Key<?> parent) {
         PARENT_GAMERULES.put(child, parent);
     }
 
-    public static boolean hasParent(GameRules.Key<?> key) {
-        return PARENT_GAMERULES.containsKey(key);
-    }
-
-    public static <T extends GameRules.Value<T>> Optional<GameRules.Key<T>> getParentRule(GameRules.Key<T> child) {
+    public static <T extends GameRules.Value<T>> Optional<GameRules.Key<T>> getVisualParent(GameRules.Key<T> child) {
         //noinspection unchecked
         return Optional.ofNullable((GameRules.Key<T>) PARENT_GAMERULES.get(child));
     }
 
-    public static <T extends GameRules.Value<T>> Set<GameRules.Key<T>> getChildRules(GameRules.Key<T> parent) {
+    public static <T extends GameRules.Value<T>> Set<GameRules.Key<T>> getVisualChildren(GameRules.Key<T> parent) {
         //noinspection unchecked
         return PARENT_GAMERULES.entrySet().stream()
                 .filter(entry -> entry.getValue() == parent)
                 .map(entry -> (GameRules.Key<T>) entry.getKey())
                 .collect(Collectors.toSet());
+    }
+
+    public static <T extends GameRules.Value<T>> void setDeferrable(GameRules.Key<T> child, GameRules.Key<T> parent) {
+        DEFERRABLE_GAMERULES.put(child, parent);
+        setVisualParent(child, parent);
+    }
+
+    public static boolean isDeferrable(GameRules.Key<?> key) {
+        return DEFERRABLE_GAMERULES.containsKey(key);
+    }
+
+    public static <T extends GameRules.Value<T>> Optional<GameRules.Key<T>> getDeferredParent(GameRules.Key<T> child) {
+        //noinspection unchecked
+        return Optional.ofNullable((GameRules.Key<T>) DEFERRABLE_GAMERULES.get(child));
     }
 }

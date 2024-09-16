@@ -13,10 +13,16 @@ public class Utils {
 
         return name -> {
             GameRules.Key<V> rule = GameRuleRegistry.register(prefix + name, category, factory.apply(defaultValue));
-            GranularGamerules.add(rule, parent);
+            GranularGamerules.setDeferrable(rule, parent);
 
             return rule;
         };
+    }
+
+    private static <T extends GameRules.Value<T>> GameRules.Key<T> createChild(GameRules.Key<?> parent, String name, GameRules.Type<T> type) {
+        GameRules.Key<T> rule = GameRuleRegistry.register(parent.getId() + "/" + name, parent.getCategory(), type);
+        GranularGamerules.setVisualParent(rule, parent);
+        return rule;
     }
 
     public interface RuleGenerator<V extends GameRules.Value<V>> {

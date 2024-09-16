@@ -33,7 +33,7 @@ public abstract class GameRulesMixin implements GGGameRules {
 
     @Override
     public void gg$setDeferred(GameRules.Key<?> key, boolean isDeferred) {
-        if (!GranularGamerules.hasParent(key)) {
+        if (!GranularGamerules.isDeferrable(key)) {
             GranularGamerules.LOGGER.warn("Tried to mark non-parented gamerule: {}", key.getId());
             return;
         }
@@ -68,7 +68,7 @@ public abstract class GameRulesMixin implements GGGameRules {
         var map = new CompoundTag();
 
         this.rules.forEach((key, value) -> {
-            if (GranularGamerules.hasParent(key)) {
+            if (GranularGamerules.isDeferrable(key)) {
                 map.putBoolean(key.getId(), this.deferralMap.getOrDefault(key, true));
             }
         });
@@ -85,7 +85,7 @@ public abstract class GameRulesMixin implements GGGameRules {
         this.deferralMap.clear();
 
         this.rules.forEach((key, value) -> {
-            if (GranularGamerules.hasParent(key)) {
+            if (GranularGamerules.isDeferrable(key)) {
                 this.deferralMap.put(key, deferredIds.get(key.getId()).asBoolean(true));
             }
         });

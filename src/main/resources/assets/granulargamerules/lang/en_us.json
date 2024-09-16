@@ -11,6 +11,8 @@
   "gamerule.mobGriefing/silverfishWakeFriends": "Silverfish wake friends",
   "gamerule.mobGriefing/zombiesBreakDoors": "Zombies break doors",
   "gamerule.mobGriefing/zombiesBreakDoors.description": "Only on Hard difficulty",
+  "gamerule.playersSleepingCountsBelowSurface": "Sleeping counts players below the surface",
+  "gamerule.playersSleepingCountsBelowSurface.description": "'Below the surface' means 10 blocks below the ocean level. Players below the surface can still sleep and count towards the threshold.",
   "gamerule.universalAnger/bees": "Bees have universal anger",
   "gamerule.universalAnger/endermen": "Endermen have universal anger",
   "gamerule.universalAnger/ironGolems": "Iron Golems have universal anger",

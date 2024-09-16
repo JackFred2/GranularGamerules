@@ -29,7 +29,7 @@ public class GGCommand {
     }
 
     private static <T extends GameRules.Value<T>> void possiblyMakeDeferOption(CommandDispatcher<CommandSourceStack> dispatcher, GameRules.Key<T> key) {
-        var parent = GranularGamerules.getParentRule(key);
+        var parent = GranularGamerules.getDeferredParent(key);
 
         if (parent.isPresent())
             dispatcher.register(makeFakeGameruleRoot()
