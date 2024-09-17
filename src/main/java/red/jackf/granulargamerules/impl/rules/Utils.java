@@ -19,7 +19,7 @@ public class Utils {
         };
     }
 
-    private static <T extends GameRules.Value<T>> GameRules.Key<T> createChild(GameRules.Key<?> parent, String name, GameRules.Type<T> type) {
+    public static <T extends GameRules.Value<T>> GameRules.Key<T> createChild(GameRules.Key<?> parent, String name, GameRules.Type<T> type) {
         GameRules.Key<T> rule = GameRuleRegistry.register(parent.getId() + "/" + name, parent.getCategory(), type);
         GranularGamerules.setVisualParent(rule, parent);
         return rule;

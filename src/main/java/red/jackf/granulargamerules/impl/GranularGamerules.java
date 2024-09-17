@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import red.jackf.granulargamerules.impl.config.GGConfig;
 import red.jackf.granulargamerules.impl.rules.MiscRules;
 import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
+import red.jackf.granulargamerules.impl.rules.MobSpawningRules;
 import red.jackf.granulargamerules.impl.rules.UniversalAngerRules;
 
 import java.util.HashMap;
@@ -35,6 +36,7 @@ public class GranularGamerules implements ModInitializer {
         GGConfig.INSTANCE.load();
 
         MobGriefingRules.setup();
+        MobSpawningRules.setup();
         UniversalAngerRules.setup();
         MiscRules.setup();
 
