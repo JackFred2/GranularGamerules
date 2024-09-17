@@ -62,9 +62,13 @@ public abstract class GameRuleEntryMixin extends EditGameRulesScreen.RuleEntry i
 
     @Override
     public void gg$setParentGameruleKey(GameRules.Key<?> key, GameRules rules) {
+        boolean isDeferred = GranularGamerules.isDeferrable(this.key);
         this.parentKey = key;
-        this.deferrableHolder = new DeferrableHolder((EditGameRulesScreen.GameRuleEntry) (Object) this, rules);
-        this.children().add(this.deferrableHolder.checkboxButton);
+
+        if (isDeferred) {
+            this.deferrableHolder = new DeferrableHolder((EditGameRulesScreen.GameRuleEntry) (Object) this, rules);
+            this.children().add(this.deferrableHolder.checkboxButton);
+        }
     }
 
     @Nullable
