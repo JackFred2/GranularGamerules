@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.GameRules;
 import red.jackf.granulargamerules.impl.mixinutil.GGServerPlayerSurfaceTracker;
+import red.jackf.granulargamerules.mixins.miscrules.enablethunder.ServerLevelAccessor;
 
 public class MiscRules {
     public static final int BLOCKS_BELOW_SEA_LEVEL = 10;
@@ -16,7 +17,17 @@ public class MiscRules {
             = GameRuleRegistry.register("playersSleepingCountsBelowSurface", GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(true, MiscRules::onSleepBelowSurfaceUpdate));
 
     public static final GameRules.Key<GameRules.BooleanValue> ENABLE_THUNDER
-            = Utils.createChild(GameRules.RULE_WEATHER_CYCLE, "enableThunder", GameRuleFactory.createBooleanRule(true));
+            = Utils.createChild(GameRules.RULE_WEATHER_CYCLE, "enableThunder", GameRuleFactory.createBooleanRule(true, (server, newValue) -> {
+                // disable thunder if turned off, prevents rain being stuck as thunder
+                if (!newValue.get()) {
+                    for (ServerLevel level : server.getAllLevels()) {
+                        if (level.dimensionType().hasSkyLight()) {
+                            ((ServerLevelAccessor) level).getServerLevelData().setThunderTime(((ServerLevelAccessor) level).getThunderDelay().sample(level.random));
+                            ((ServerLevelAccessor) level).getServerLevelData().setThundering(false);
+                        }
+                    }
+                }
+    }));
 
     private static void onSleepBelowSurfaceUpdate(MinecraftServer server, GameRules.BooleanValue value) {
         for (ServerLevel level : server.getAllLevels()) {
