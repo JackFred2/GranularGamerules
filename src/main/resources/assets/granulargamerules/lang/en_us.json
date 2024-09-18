@@ -14,6 +14,7 @@
   "gamerule.doMobSpawning/waterAmbient.description": "Currently, only fish.",
   "gamerule.doMobSpawning/waterCreature": "Spawn water creatures",
   "gamerule.doMobSpawning/waterCreature.description": "Currently, only Dolphins and Squid.",
+  "gamerule.doWeatherCycle/enableThunder": "Enable thunderstorms",
   "gamerule.mobGriefing/endermenMoveBlocks": "Endermen move blocks",
   "gamerule.mobGriefing/evokersWololo": "Evokers dye blue sheep red",
   "gamerule.mobGriefing/itemsTakenByAllays": "Allays can pick up items",

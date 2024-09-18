@@ -14,6 +14,7 @@
     "domobspawning.TrialSpawnerMixin",
     "domobspawning.WanderingTraderSpawnerMixin",
     "domobspawning.ZombieMixin",
+    "miscrules.enablethunder.ServerLevelMixin",
     "miscrules.sleepcountsbelowsurface.ServerPlayerMixin",
     "miscrules.sleepcountsbelowsurface.SleepStatusMixin",
     "mobgriefing.endermenmoveblocks.EndermanGoalsMixin",

@@ -15,6 +15,9 @@ public class MiscRules {
     public static final GameRules.Key<GameRules.BooleanValue> SLEEP_COUNTS_BELOW_SURFACE
             = GameRuleRegistry.register("playersSleepingCountsBelowSurface", GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(true, MiscRules::onSleepBelowSurfaceUpdate));
 
+    public static final GameRules.Key<GameRules.BooleanValue> ENABLE_THUNDER
+            = Utils.createChild(GameRules.RULE_WEATHER_CYCLE, "enableThunder", GameRuleFactory.createBooleanRule(true));
+
     private static void onSleepBelowSurfaceUpdate(MinecraftServer server, GameRules.BooleanValue value) {
         for (ServerLevel level : server.getAllLevels()) {
             level.updateSleepingPlayerList();
