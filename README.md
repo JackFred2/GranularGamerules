@@ -14,7 +14,7 @@ Not all of these will be done, just most likely
 - Villagers work farmland ✅
 - Zombies break doors ✅
 - Sheep eat grass ✅
-- Zombies break turtle eggs
+- Zombies break turtle eggs ✅
 - Foxes harvest berry bushes ✅
 - Rabbit harvest carrots ✅
 - Snow golems place snow ✅

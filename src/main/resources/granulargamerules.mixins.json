@@ -28,6 +28,8 @@
     "mobgriefing.mobexplosions.LargeFireballMixin",
     "mobgriefing.mobexplosions.LevelMixin",
     "mobgriefing.mobexplosions.WitherBossMixin",
+    "mobgriefing.mobscrushturtleeggs.RemoveBlockGoalMixin",
+    "mobgriefing.mobscrushturtleeggs.TurtleEggBlockMixin",
     "mobgriefing.mobstramplefarmland.FarmBlockMixin",
     "mobgriefing.ravagersdestroyplants.CropBlockMixin",
     "mobgriefing.ravagersdestroyplants.RavagerMixin",

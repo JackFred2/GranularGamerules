@@ -25,6 +25,8 @@
   "gamerule.mobGriefing/itemsTakenByOthers": "Other mobs can pick up items",
   "gamerule.mobGriefing/itemsTakenByPiglins": "Piglins can pick up items",
   "gamerule.mobGriefing/itemsTakenByVillagers": "Villagers can pick up items",
+  "gamerule.mobGriefing/mobsCrushTurtleEggs": "Mobs crush turtle eggs",
+  "gamerule.mobGriefing/mobsCrushTurtleEggs.description": "Also whether Zombies will target eggs.",
   "gamerule.mobGriefing/mobsTrampleFarmland": "Mobs trample farmland",
   "gamerule.mobGriefing/ravagersDestroyPlants": "Ravagers destroy plants",
   "gamerule.mobGriefing/silverfishEnterStone": "Silverfish enter stone",

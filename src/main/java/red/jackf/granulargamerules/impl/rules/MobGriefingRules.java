@@ -15,6 +15,7 @@ public class MobGriefingRules {
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_OTHERS = create("itemsTakenByOthers");
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_PIGLINS = create("itemsTakenByPiglins");
     public static final GameRules.Key<GameRules.BooleanValue> ITEMS_TAKEN_BY_VILLAGERS = create("itemsTakenByVillagers");
+    public static final GameRules.Key<GameRules.BooleanValue> MOBS_CRUSH_TURTLE_EGGS = create("mobsCrushTurtleEggs");
     public static final GameRules.Key<GameRules.BooleanValue> MOBS_TRAMPLE_FARMLAND = create("mobsTrampleFarmland");
     public static final GameRules.Key<GameRules.BooleanValue> RAVAGERS_DESTROY_PLANTS = create("ravagersDestroyPlants");
     public static final GameRules.Key<GameRules.BooleanValue> SILVERFISH_ENTER_STONE = create("silverfishEnterStone");
