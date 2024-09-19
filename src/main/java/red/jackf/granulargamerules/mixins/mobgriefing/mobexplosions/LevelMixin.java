@@ -32,7 +32,6 @@ public class LevelMixin {
             case LargeFireball ignored: yield GGDeferredChecker.getBoolean(instance, MobGriefingRules.GHASTS_DESTROY_BLOCKS);
             case WitherBoss ignored: yield GGDeferredChecker.getBoolean(instance, MobGriefingRules.WITHERS_DESTROY_BLOCKS);
             case WitherSkull ignored: yield GGDeferredChecker.getBoolean(instance, MobGriefingRules.WITHERS_DESTROY_BLOCKS);
-            // todo other wither  and ghast abilities
             default: yield Optional.<Boolean>empty();
         } : Optional.<Boolean>empty();
 

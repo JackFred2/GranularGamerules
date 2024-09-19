@@ -6,6 +6,7 @@ import net.minecraft.world.level.GameRules;
 public class MobGriefingRules {
     private static final Utils.RuleGenerator<GameRules.BooleanValue> GENERATOR = Utils.createGenerator(GameRules.RULE_MOBGRIEFING, true, GameRuleFactory::createBooleanRule);
 
+    public static final GameRules.Key<GameRules.BooleanValue> CREATURES_EAT_PLANTS = create("creaturesEatPlants");
     public static final GameRules.Key<GameRules.BooleanValue> CREEPERS_DESTROY_BLOCKS = create("creepersDestroyBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> EVOKERS_WOLOLO = create("evokersWololo");

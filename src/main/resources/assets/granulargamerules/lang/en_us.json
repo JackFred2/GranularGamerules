@@ -15,6 +15,8 @@
   "gamerule.doMobSpawning/waterCreature": "Spawn water creatures",
   "gamerule.doMobSpawning/waterCreature.description": "Currently, only Dolphins and Squid.",
   "gamerule.doWeatherCycle/enableThunder": "Enable thunderstorms",
+  "gamerule.mobGriefing/creaturesEatPlants": "Creatures eat plants",
+  "gamerule.mobGriefing/creaturesEatPlants.description": "Whether Foxes, Rabbits and Sheep will eat berries, carrots and grass. Sheep will still regrow wool.",
   "gamerule.mobGriefing/creepersDestroyBlocks": "Creepers destroy blocks",
   "gamerule.mobGriefing/endermenMoveBlocks": "Endermen move blocks",
   "gamerule.mobGriefing/evokersWololo": "Evokers dye blue sheep red",
