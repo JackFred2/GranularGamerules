@@ -34,6 +34,7 @@
     "mobgriefing.silverfishbreakstoneonexit.SilverfishWakeUpFriendsGoalMixin",
     "mobgriefing.silverfishenterstone.SilverfishMergeWithStoneGoalMixin",
     "mobgriefing.snowgolemsleavetrails.SnowGolemMixin",
+    "mobgriefing.villagersworkfarmland.HarvestFarmlandMixin",
     "mobgriefing.wololo.EvokerWololoSpellGoalMixin",
     "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin",
     "universalanger.HurtByTargetGoalMixin",

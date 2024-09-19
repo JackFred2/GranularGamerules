@@ -20,6 +20,7 @@ public class MobGriefingRules {
     public static final GameRules.Key<GameRules.BooleanValue> SILVERFISH_ENTER_STONE = create("silverfishEnterStone");
     public static final GameRules.Key<GameRules.BooleanValue> SILVERFISH_WAKE_FRIENDS = create("silverfishWakeFriends");
     public static final GameRules.Key<GameRules.BooleanValue> SNOW_GOLEMS_LEAVE_TRAILS = create("snowGolemsLeaveTrails");
+    public static final GameRules.Key<GameRules.BooleanValue> VILLAGERS_WORK_FARMLAND = create("villagersWorkFarmland");
     public static final GameRules.Key<GameRules.BooleanValue> WITHERS_DESTROY_BLOCKS = create("withersDestroyBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> ZOMBIES_BREAK_DOORS = create("zombiesBreakDoors");
 
