@@ -27,6 +27,7 @@
   "gamerule.mobGriefing/ravagersDestroyPlants": "Ravagers destroy plants",
   "gamerule.mobGriefing/silverfishEnterStone": "Silverfish enter stone",
   "gamerule.mobGriefing/silverfishWakeFriends": "Silverfish wake friends",
+  "gamerule.mobGriefing/snowGolemsLeaveTrails": "Snow Golems leave trails",
   "gamerule.mobGriefing/withersDestroyBlocks": "Withers destroy blocks",
   "gamerule.mobGriefing/withersDestroyBlocks.description": "Whether Wither Bosses can affect terrain with it's initial explosion, skull projectiles, or on damage.",
   "gamerule.mobGriefing/zombiesBreakDoors": "Zombies break doors",

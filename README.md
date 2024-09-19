@@ -17,7 +17,7 @@ Not all of these will be done, just most likely
 - Zombies break turtle eggs
 - Foxes harvest berry bushes
 - Rabbit harvest carrots
-- Snow golems place snow
+- Snow golems place snow ✅
 - Ender dragon breaks non-end blocks
 - Wither breaks blocks on damage ✅
 - Endermen place/break blocks ✅

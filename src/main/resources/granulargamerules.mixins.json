@@ -30,6 +30,7 @@
     "mobgriefing.ravagersdestroyplants.RavagerMixin",
     "mobgriefing.silverfishbreakstoneonexit.SilverfishWakeUpFriendsGoalMixin",
     "mobgriefing.silverfishenterstone.SilverfishMergeWithStoneGoalMixin",
+    "mobgriefing.snowgolemleavestrail.SnowGolemMixin",
     "mobgriefing.wololo.EvokerWololoSpellGoalMixin",
     "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin",
     "universalanger.HurtByTargetGoalMixin",
