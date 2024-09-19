@@ -11,20 +11,20 @@ Not all of these will be done, just most likely
 - Mobs pick up items ✅
   - Allays pick up items ✅
   - Piglins pick up gold ✅
-- Villagers work farmland
+- Villagers work farmland ✅
 - Zombies break doors ✅
-- Sheep eat grass
+- Sheep eat grass ✅
 - Zombies break turtle eggs
-- Foxes harvest berry bushes
-- Rabbit harvest carrots
+- Foxes harvest berry bushes ✅
+- Rabbit harvest carrots ✅
 - Snow golems place snow ✅
 - Ender dragon breaks non-end blocks
 - Wither breaks blocks on damage ✅
 - Endermen place/break blocks ✅
 - Evokers turn blue sheep red ✅
 - Ravagers destroy ✅
-  - ..leaves
-  - ..crops
+  - ..leaves ✅
+  - ..crops ✅
 - Silverfish enter stone ✅
 - Silverfish wake others up from infested stone ✅
 - Ghast fireballs ignite blocks ✅
