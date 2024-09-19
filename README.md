@@ -19,7 +19,7 @@ Not all of these will be done, just most likely
 - Rabbit harvest carrots
 - Snow golems place snow
 - Ender dragon breaks non-end blocks
-- Wither breaks blocks on damage
+- Wither breaks blocks on damage ✅
 - Endermen place/break blocks ✅
 - Evokers turn blue sheep red ✅
 - Ravagers destroy ✅
@@ -27,7 +27,7 @@ Not all of these will be done, just most likely
   - ..crops
 - Silverfish enter stone ✅
 - Silverfish wake others up from infested stone ✅
-- Ghast fireballs ignite blocks
+- Ghast fireballs ignite blocks ✅
 - Mob launched projectiles (blaze fireballs, skeleton arrows)
   - Ignite campfires
   - Destroy dripstone, chorus flowers or pots
@@ -37,10 +37,10 @@ Not all of these will be done, just most likely
 - Blaze fireballs set fires
 - Breeze projectiles trigger blocks
 - Mob sourced explosions destroy blocks
-  - Creepers
-  - Ghast Fireballs
-  - Wither initial explosion
-  - Wither projectiles
+  - Creepers ✅
+  - Ghast Fireballs ✅
+  - Wither initial explosion ✅
+  - Wither projectiles ✅
 - Falling mobs destroy farmland ✅
 
 ## (Dedicated Server) Fake game rules
