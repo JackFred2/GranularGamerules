@@ -2,7 +2,6 @@ package red.jackf.granulargamerules.impl.rules;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -13,8 +12,8 @@ import red.jackf.granulargamerules.mixins.miscrules.enablethunder.ServerLevelAcc
 public class MiscRules {
     public static final int BLOCKS_BELOW_SEA_LEVEL = 10;
 
-    public static final GameRules.Key<GameRules.BooleanValue> SLEEP_COUNTS_BELOW_SURFACE
-            = GameRuleRegistry.register("playersSleepingCountsBelowSurface", GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(true, MiscRules::onSleepBelowSurfaceUpdate));
+    public static final GameRules.Key<GameRules.BooleanValue> COUNT_UNDERGROUND
+            = Utils.createChild(GameRules.RULE_PLAYERS_SLEEPING_PERCENTAGE, "countUnderground", GameRuleFactory.createBooleanRule(true, MiscRules::onSleepBelowSurfaceUpdate));
 
     public static final GameRules.Key<GameRules.BooleanValue> ENABLE_THUNDER
             = Utils.createChild(GameRules.RULE_WEATHER_CYCLE, "enableThunder", GameRuleFactory.createBooleanRule(true, (server, newValue) -> {
