@@ -8,6 +8,7 @@ public class MobGriefingRules {
 
     public static final GameRules.Key<GameRules.BooleanValue> CREATURES_EAT_PLANTS = create("creaturesEatPlants");
     public static final GameRules.Key<GameRules.BooleanValue> CREEPERS_DESTROY_BLOCKS = create("creepersDestroyBlocks");
+    public static final GameRules.Key<GameRules.BooleanValue> ENDER_DRAGON_DESTROYS_BLOCKS = create("enderDragonDestroysBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> ENDERMEN_MOVE_BLOCKS = create("endermenMoveBlocks");
     public static final GameRules.Key<GameRules.BooleanValue> EVOKERS_WOLOLO = create("evokersWololo");
     public static final GameRules.Key<GameRules.BooleanValue> GHASTS_DESTROY_BLOCKS = create("ghastsDestroyBlocks");

@@ -19,6 +19,8 @@
   "gamerule.mobGriefing/creaturesEatPlants.description": "Whether Foxes, Rabbits and Sheep will eat berries, carrots and grass. Sheep will still regrow wool.",
   "gamerule.mobGriefing/creepersDestroyBlocks": "Creepers destroy blocks",
   "gamerule.mobGriefing/endermenMoveBlocks": "Endermen move blocks",
+  "gamerule.mobGriefing/enderDragonDestroysBlocks": "Ender Dragon destroys blocks",
+  "gamerule.mobGriefing/enderDragonDestroysBlocks.description": "Only 'non-End blocks' are destroyed.",
   "gamerule.mobGriefing/evokersWololo": "Evokers dye blue sheep red",
   "gamerule.mobGriefing/ghastsDestroyBlocks": "Ghast fireballs destroy blocks",
   "gamerule.mobGriefing/itemsTakenByAllays": "Allays can pick up items",

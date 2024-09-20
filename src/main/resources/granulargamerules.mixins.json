@@ -21,6 +21,7 @@
     "mobgriefing.creatureseatplants.EatBlockGoalMixin",
     "mobgriefing.creatureseatplants.FoxEatBerriesGoalMixin",
     "mobgriefing.creatureseatplants.RabbitRaidGardenGoalMixin",
+    "mobgriefing.enderdragondestroysblocks.EnderDragonMixin",
     "mobgriefing.endermenmoveblocks.EndermanGoalsMixin",
     "mobgriefing.itempickup.AllayMixin",
     "mobgriefing.itempickup.MobMixin",
