@@ -22,7 +22,7 @@ public class MiscRules {
                 if (!newValue.get()) {
                     for (ServerLevel level : server.getAllLevels()) {
                         if (level.dimensionType().hasSkyLight()) {
-                            ((ServerLevelAccessor) level).getServerLevelData().setThunderTime(((ServerLevelAccessor) level).getThunderDelay().sample(level.random));
+                            ((ServerLevelAccessor) level).getServerLevelData().setThunderTime(ServerLevelAccessor.getThunderDelay().sample(level.random));
                             ((ServerLevelAccessor) level).getServerLevelData().setThundering(false);
                         }
                     }

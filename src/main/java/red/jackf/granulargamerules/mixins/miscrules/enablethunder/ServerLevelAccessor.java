@@ -11,7 +11,9 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 public interface ServerLevelAccessor {
     @Accessor("THUNDER_DELAY")
     @Final
-    IntProvider getThunderDelay();
+    static IntProvider getThunderDelay() {
+        return null;
+    }
 
     @Accessor
     ServerLevelData getServerLevelData();
