@@ -127,7 +127,7 @@ dependencies {
 		parchment("org.parchmentmc.data:parchment-${properties["parchment_version"]}@zip")
 	})
 	modImplementation("net.fabricmc:fabric-loader:${properties["loader_version"]}")
-	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.5.0-beta.3")!!)!!)
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${properties["mixinextras_version"]}")!!)!!)
 
 	include(modApi("red.jackf.jackfredlib:jackfredlib:${properties["jackfredlib_version"]}")!!)
 
@@ -205,6 +205,7 @@ publishing {
 }
 
 if (canPublish) {
+	// Changelog Generation
 	val lastTag = if (System.getenv("PREVIOUS_TAG") == "NONE") null else System.getenv("PREVIOUS_TAG")
 	val newTag = "v$version"
 
@@ -216,13 +217,17 @@ if (canPublish) {
 			val addonProp: String = properties["changelogHeaderAddon"]!!.toString()
 
 			if (addonProp.isNotBlank()) {
-				addonProp + "\n\n"
+				addonProp
 			} else {
-				""
+				null
 			}
 		} else {
-			""
+			null
 		}
+
+		val changelogFileText = rootProject.file("changelogs/${properties["mod_version"]}.md")
+			.takeIf { it.exists() }
+			?.readText()
 
 		generateChangelogTask = tasks.register<GenerateChangelogTask>("generateChangelog") {
 			this.lastTag.set(lastTag)
@@ -230,11 +235,14 @@ if (canPublish) {
 			githubUrl.set(properties["github_url"]!!.toString())
 			prefixFilters.set(properties["changelog_filter"]!!.toString().split(","))
 
+			val bundledText = """
+                |Bundled:
+                |  - JackFredLib: ${properties["jackfredlib_version"]}
+                |  - Mixin Extras: ${properties["mixinextras_version"]}
+                |  """.trimMargin()
+
 			// Add a bundled block for each module version
-			prologue.set(changelogHeader + """
-				|Bundled:
-				|  - JackFredLib: ${properties["jackfredlib_version"]}
-				|  """.trimMargin())
+			prologue.set(listOfNotNull(changelogHeader, changelogFileText, bundledText).joinToString(separator = "\n\n"))
 		}
 	}
 
