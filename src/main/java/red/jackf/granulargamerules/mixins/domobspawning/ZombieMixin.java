@@ -16,7 +16,7 @@ public abstract class ZombieMixin {
     @Definition(id = "MOBSPAWNING", field = "Lnet/minecraft/world/level/GameRules;RULE_DOMOBSPAWNING:Lnet/minecraft/world/level/GameRules$Key;")
     @Definition(id = "getBoolean", method = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z")
     @Expression("?.getBoolean(MOBSPAWNING)")
-    @WrapOperation(method = "hurt", at = @At("MIXINEXTRAS:EXPRESSION"))
+    @WrapOperation(method = "hurtServer", at = @At("MIXINEXTRAS:EXPRESSION"))
     private boolean checkGGRule(GameRules instance, GameRules.Key<GameRules.BooleanValue> parent, Operation<Boolean> original) {
         return GGDeferredChecker.getBoolean(instance, MobSpawningRules.MONSTER).orElse(original.call(instance, parent));
     }

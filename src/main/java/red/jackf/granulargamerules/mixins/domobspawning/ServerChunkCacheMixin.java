@@ -15,12 +15,12 @@ import red.jackf.granulargamerules.impl.rules.MobSpawningRules;
 public abstract class ServerChunkCacheMixin {
 
     @Shadow @Final
-    ServerLevel level;
+    private ServerLevel level;
 
     @Definition(id = "MOBSPAWNING", field = "Lnet/minecraft/world/level/GameRules;RULE_DOMOBSPAWNING:Lnet/minecraft/world/level/GameRules$Key;")
     @Definition(id = "getBoolean", method = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z")
     @Expression("?.getBoolean(MOBSPAWNING)")
-    @ModifyExpressionValue(method = "tickChunks", at = @At("MIXINEXTRAS:EXPRESSION"))
+    @ModifyExpressionValue(method = "tickChunks(Lnet/minecraft/util/profiling/ProfilerFiller;JLjava/util/List;)V", at = @At("MIXINEXTRAS:EXPRESSION"))
     private boolean doSpawningAnywayIfOverrideIsPresent(boolean original) {
         return original || MobSpawningRules.anySpawningOverrides(this.level);
     }

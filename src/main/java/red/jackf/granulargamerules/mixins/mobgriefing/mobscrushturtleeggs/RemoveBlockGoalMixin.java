@@ -15,11 +15,11 @@ import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
 public class RemoveBlockGoalMixin {
 
     @Definition(id = "removerMob", field = "Lnet/minecraft/world/entity/ai/goal/RemoveBlockGoal;removerMob:Lnet/minecraft/world/entity/Mob;")
-    @Definition(id = "level", method = "Lnet/minecraft/world/entity/Mob;level()Lnet/minecraft/world/level/Level;")
-    @Definition(id = "getGameRules", method = "Lnet/minecraft/world/level/Level;getGameRules()Lnet/minecraft/world/level/GameRules;")
+    @Definition(id = "getServerLevel", method = "Lnet/minecraft/world/entity/ai/goal/RemoveBlockGoal;getServerLevel(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/server/level/ServerLevel;")
+    @Definition(id = "getGameRules", method = "Lnet/minecraft/server/level/ServerLevel;getGameRules()Lnet/minecraft/world/level/GameRules;")
     @Definition(id = "getBoolean", method = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z")
     @Definition(id = "RULE_MOBGRIEFING", field = "Lnet/minecraft/world/level/GameRules;RULE_MOBGRIEFING:Lnet/minecraft/world/level/GameRules$Key;")
-    @Expression("this.removerMob.level().getGameRules().getBoolean(RULE_MOBGRIEFING)")
+    @Expression("getServerLevel(this.removerMob).getGameRules().getBoolean(RULE_MOBGRIEFING)")
     @WrapOperation(method = "canUse", at = @At("MIXINEXTRAS:EXPRESSION"))
     private boolean checkGGRule(GameRules instance, GameRules.Key<GameRules.BooleanValue> key, Operation<Boolean> original) {
         return GGDeferredChecker.getBoolean(instance, MobGriefingRules.MOBS_CRUSH_TURTLE_EGGS).orElse(original.call(instance, key));

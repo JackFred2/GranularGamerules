@@ -143,7 +143,7 @@ dependencies {
 	modLocalRuntime("com.terraformersmc:modmenu:${properties["modmenu_version"]}")
 
 	//modCompileOnly("dev.emi:emi-fabric:${properties["emi_version"]}:api")
-	modLocalRuntime("dev.emi:emi-fabric:${properties["emi_version"]}")
+	//modLocalRuntime("dev.emi:emi-fabric:${properties["emi_version"]}")
 }
 
 tasks.withType<ProcessResources>().configureEach {

@@ -19,6 +19,6 @@ public class SleepStatusMixin {
                     to = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerPlayer;isSleeping()Z")
             ))
     private boolean dontCountPlayersBelowSurface(SleepStatus instance, int activePlayers, @Local ServerPlayer player) {
-        return player.level().getGameRules().getBoolean(MiscRules.COUNT_UNDERGROUND) || !MiscRules.isBelowSurface(player);
+        return player.serverLevel().getGameRules().getBoolean(MiscRules.COUNT_UNDERGROUND) || !MiscRules.isBelowSurface(player);
     }
 }

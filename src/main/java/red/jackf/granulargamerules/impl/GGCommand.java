@@ -8,13 +8,18 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.GameRules;
 import red.jackf.granulargamerules.impl.mixinutil.GGGameRules;
+import red.jackf.jackfredlib.api.base.ServerTracker;
 
 public class GGCommand {
     public static void setup() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            GameRules.visitGameRuleTypes(new GameRules.GameRuleTypeVisitor() {
+            MinecraftServer server = ServerTracker.INSTANCE.getServer();
+            if (server == null) return;
+
+            server.getGameRules().visitGameRuleTypes(new GameRules.GameRuleTypeVisitor() {
                 @Override
                 public <T extends GameRules.Value<T>> void visit(GameRules.Key<T> key, GameRules.Type<T> type) {
                     GGCommand.possiblyMakeDeferOption(dispatcher, key);

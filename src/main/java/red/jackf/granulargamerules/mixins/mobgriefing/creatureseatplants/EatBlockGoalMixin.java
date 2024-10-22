@@ -14,10 +14,11 @@ import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
 @Mixin(EatBlockGoal.class)
 public abstract class EatBlockGoalMixin {
     @Definition(id = "level", field = "Lnet/minecraft/world/entity/ai/goal/EatBlockGoal;level:Lnet/minecraft/world/level/Level;")
-    @Definition(id = "getGameRules", method = "Lnet/minecraft/world/level/Level;getGameRules()Lnet/minecraft/world/level/GameRules;")
+    @Definition(id = "getServerLevel", method = "Lnet/minecraft/world/entity/ai/goal/EatBlockGoal;getServerLevel(Lnet/minecraft/world/level/Level;)Lnet/minecraft/server/level/ServerLevel;")
+    @Definition(id = "getGameRules", method = "Lnet/minecraft/server/level/ServerLevel;getGameRules()Lnet/minecraft/world/level/GameRules;")
     @Definition(id = "getBoolean", method = "Lnet/minecraft/world/level/GameRules;getBoolean(Lnet/minecraft/world/level/GameRules$Key;)Z")
     @Definition(id = "RULE_MOBGRIEFING", field = "Lnet/minecraft/world/level/GameRules;RULE_MOBGRIEFING:Lnet/minecraft/world/level/GameRules$Key;")
-    @Expression("this.level.getGameRules().getBoolean(RULE_MOBGRIEFING)")
+    @Expression("getServerLevel(this.level).getGameRules().getBoolean(RULE_MOBGRIEFING)")
     @WrapOperation(method = "tick", at = @At("MIXINEXTRAS:EXPRESSION"))
     private boolean checkGGRule(GameRules instance, GameRules.Key<GameRules.BooleanValue> key, Operation<Boolean> original) {
         return GGDeferredChecker.getBoolean(instance, MobGriefingRules.CREATURES_EAT_PLANTS).orElse(original.call(instance, key));

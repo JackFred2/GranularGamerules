@@ -1,6 +1,7 @@
 package red.jackf.granulargamerules.client.impl.screen;
 
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import red.jackf.granulargamerules.impl.GranularGamerules;
 
@@ -13,6 +14,6 @@ public class GroupRenderer {
     private static final ResourceLocation GROUP_BACKGROUND = GranularGamerules.id("group/background");
 
     public static void render(GuiGraphics graphics, int left, int top, int width, int height) {
-        graphics.blitSprite(GROUP_BACKGROUND, left - LEFT_MARGIN, top - TOP_MARGIN, width + LEFT_MARGIN + RIGHT_MARGIN, height + BOTTOM_MARGIN + TOP_MARGIN);
+        graphics.blitSprite(RenderType::guiTextured, GROUP_BACKGROUND, left - LEFT_MARGIN, top - TOP_MARGIN, width + LEFT_MARGIN + RIGHT_MARGIN, height + BOTTOM_MARGIN + TOP_MARGIN);
     }
 }

@@ -3,6 +3,7 @@ package red.jackf.granulargamerules.client.impl.screen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.WidgetSprites;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 
 public class TwoStateButton extends Button {
@@ -20,7 +21,7 @@ public class TwoStateButton extends Button {
 
     @Override
     protected void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        guiGraphics.blitSprite(sprites.get(this.state, this.isHoveredOrFocused()), this.getX(), this.getY(), this.getWidth(), this.getHeight());
+        guiGraphics.blitSprite(RenderType::guiTextured, sprites.get(this.state, this.isHoveredOrFocused()), this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
 
     public interface OnPress {

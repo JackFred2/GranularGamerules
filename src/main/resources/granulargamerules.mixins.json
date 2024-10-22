@@ -27,7 +27,7 @@
     "mobgriefing.itempickup.MobMixin",
     "mobgriefing.itempickup.PiglinMixin",
     "mobgriefing.mobexplosions.LargeFireballMixin",
-    "mobgriefing.mobexplosions.LevelMixin",
+    "mobgriefing.mobexplosions.ServerLevelMixin",
     "mobgriefing.mobexplosions.WitherBossMixin",
     "mobgriefing.mobscrushturtleeggs.RemoveBlockGoalMixin",
     "mobgriefing.mobscrushturtleeggs.TurtleEggBlockMixin",

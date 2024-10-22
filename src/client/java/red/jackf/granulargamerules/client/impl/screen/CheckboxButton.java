@@ -2,6 +2,7 @@ package red.jackf.granulargamerules.client.impl.screen;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
@@ -43,7 +44,7 @@ public class CheckboxButton extends Button {
         super.renderWidget(graphics, mouseX, mouseY, partialTick);
         int spriteLeft = this.getX() + this.getWidth() / 2 - SPRITE_SIZE / 2;
         int spriteTop = this.getY() + this.getHeight() / 2 - SPRITE_SIZE / 2;
-        graphics.blitSprite(isChecked ? CHECKED : UNCHECKED, spriteLeft, spriteTop, SPRITE_SIZE, SPRITE_SIZE);
+        graphics.blitSprite(RenderType::guiTextured, isChecked ? CHECKED : UNCHECKED, spriteLeft, spriteTop, SPRITE_SIZE, SPRITE_SIZE);
     }
 
     public interface OnChange {
