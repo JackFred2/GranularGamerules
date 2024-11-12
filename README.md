@@ -1,5 +1,7 @@
 # 🌍 Granular Gamerules
 
+![A meme explaining the mod - various vanilla gamerules such as mobGriefing are split into multiple.](https://cdn.modrinth.com/data/YFUweSka/images/949475b58bad6455b583f4d45051ff42acc6e0cb.png)
+
 Grants you more control over the vanilla game rule system by:
 
 - Breaking up some of Minecraft's most overloaded game rules, such as `mobGriefing`, `doMobSpawning` or `universalAnger`, into deferrable sub-rules.
@@ -8,13 +10,58 @@ Grants you more control over the vanilla game rule system by:
 
 These are all done in a way that doesn't break datapacks, mods or server plugins that change game rules, while letting you 'pin' features on or off.
 
-## 👩‍👧‍👦 Sub-Rules
+There are 33 new sub-rules; for a full description of each see [the Wiki](https://docs.jackf.red/granular-gamerules).
 
-When you install the mod, nothing will change right away. That's because most rules are _deferred_ to their parent.
+<details>
+<summary>Full list of rules</summary>
 
-For example, the new rule `mobGriefing/creepersDestroyBlocks` by default will just check `mobGriefing`, but can be overridden to turn on or off Creeper destruction regardless.
+- mobGriefing
+  - creaturesEatPlants
+  - creepersDestroyBlocks
+  - endermenMoveBlocks
+  - enderDragonDestroysBlocks
+  - evokersWololo
+  - ghastsDestroyBlocks
+  - itemsTakenByAllays
+  - itemsTakenByPiglins
+  - itemsTakenByOthers
+  - mobsCrushTurtleEggs
+  - mobsTrampleFarmland
+  - ravagersDestroyPlants
+  - silverfishEnterStone
+  - silverfishWakeFriends
+  - snowGolemsLeaveTrails
+  - withersDestroyBlocks
+  - zombiesBreakDoors
+- doMobSpawning
+  - creature
+  - monster
+  - ambient
+  - waterCreature
+  - undergroundWaterCreature
+  - waterAmbient
+  - axolotl
+- universalAnger
+  - bees
+  - endermen
+  - ironGolems
+  - llamas
+  - piglins
+  - wolves
+  - zombifiedPiglins
+- `server.properties` psuedo-gamerules
+  - pvp
+  - allowFlight
+  - enableCommandBlock
+  - maxPlayers
+  - spawnProtection
+  - simulationDistance
+  - viewDistance
+  - entityBroadcastRangePercentage
+- doWeatherCycle/enableThunder
+- playersSleepingPercentage/countUnderground
 
-There are 33 new sub-rules; for a full overview see [the Wiki](https://docs.jackf.red/granular-gamerules).
+</details>
 
 ## 🛌 New Miscellaneous Rules
 
@@ -23,11 +70,11 @@ There are 33 new sub-rules; for a full overview see [the Wiki](https://docs.jack
 - Removing underground players from the sleep vote - no longer prevented from sleeping due to miners.
 - Disabling thunder from the weather cycle.
 
-These are disabled by default, and are available on the wiki for details.
+These are disabled by default, and details are available on the wiki.
 
 ## 🖥️ Dedicated Server Rules
 
-You may have setup a dedicated server and realised you forgot to change some settings in `server.properties`. **Granular Gamerules** lets you change several of these in-game via fake game rules:
+You may have setup a dedicated server and realised you forgot to change some settings in `server.properties`. **Granular Gamerules** lets you change several of these in-game via psuedo-gamerules:
 
 - `pvp`
 - `allowFlight`
@@ -39,6 +86,12 @@ You may have setup a dedicated server and realised you forgot to change some set
 - `entityBroadcastRangePercentage`
 
 These are backed by the actual `server.properties` file, and will update the file on change.
+
+## 👩‍👧‍👦 Sub-Rules (Datapack & Server Plugin backwards compatibility)
+
+Granular Gamrules lets you change parts of gamerules when you need them. Other parts will follow the parent gamerule until they are changed.
+
+For example, if you wanted to specifically stop creepers blowing up blocks, you'd use `/gamerule mobGriefing/creepersDestroyBlocks false`. Other mobGriefing sub-rules such as Zombies breaking doors, will follow the parent `/gamerule mobGriefing` until changed. 
 
 # 🛠️ Install & Requirements
 
@@ -53,59 +106,5 @@ Can work server-side only, in the case of dedicated servers.
 ## Command Implementation
 
 'Overlays' defer nodes and fake gamerules by re-registering the 'gamerule' node. Should be fine, seems to just add.
-
-## Mob Griefing
-
-Not all of these will be done, just most likely
-
-- Weaving Effect Places Webs 
-- Wither places wither rose down
-- Mobs pick up items ✅
-  - Allays pick up items ✅
-  - Piglins pick up gold ✅
-- Villagers work farmland ✅
-- Zombies break doors ✅
-- Sheep eat grass ✅
-- Zombies break turtle eggs ✅
-- Foxes harvest berry bushes ✅
-- Rabbit harvest carrots ✅
-- Snow golems place snow ✅
-- Ender dragon breaks non-end blocks ✅
-- Wither breaks blocks on damage ✅
-- Endermen place/break blocks ✅
-- Evokers turn blue sheep red ✅
-- Ravagers destroy ✅
-  - ..leaves ✅
-  - ..crops ✅
-- Silverfish enter stone ✅
-- Silverfish wake others up from infested stone ✅
-- Ghast fireballs ignite blocks ✅
-- Mob launched projectiles (blaze fireballs, skeleton arrows)
-  - Ignite campfires
-  - Destroy dripstone, chorus flowers or pots
-  - Ignite TNT
-- Destroy powder snow on extinguish
-- Lower cauldron level on extinguish
-- Blaze fireballs set fires
-- Breeze projectiles trigger blocks
-- Mob sourced explosions destroy blocks
-  - Creepers ✅
-  - Ghast Fireballs ✅
-  - Wither initial explosion ✅
-  - Wither projectiles ✅
-- Falling mobs destroy farmland ✅
-
-## (Dedicated Server) Fake game rules
-
-- Pvp ✅
-- Allow Flight ✅
-- Enable Command Block ✅
-- Entity View Distance Percentage ✅
-- Spawn Protection Radius ✅
-- View Distance ✅
-- Simulation Distance ✅
-- Max Players ✅
-
-Added to the /gamerule command, updates the backing server.properties
 
 </details>
