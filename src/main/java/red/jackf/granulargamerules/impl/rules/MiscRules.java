@@ -2,6 +2,7 @@ package red.jackf.granulargamerules.impl.rules;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,6 +28,9 @@ public class MiscRules {
                     }
                 }
     }));
+
+    public static final GameRules.Key<GameRules.BooleanValue> PLAYERS_TRAMPLE_FARMLAND
+            = GameRuleRegistry.register("playersTrampleFarmland", GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(true));
 
     private static void onSleepBelowSurfaceUpdate(MinecraftServer server, GameRules.BooleanValue value) {
         for (ServerLevel level : server.getAllLevels()) {
