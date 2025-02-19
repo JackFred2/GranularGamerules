@@ -60,6 +60,7 @@ There are 33 new sub-rules; for a full description of each see [the Wiki](https:
   - entityBroadcastRangePercentage
 - doWeatherCycle/enableThunder
 - playersSleepingPercentage/countUnderground
+- playersTrampleFarmland
 
 </details>
 
