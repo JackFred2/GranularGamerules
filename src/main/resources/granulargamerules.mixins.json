@@ -41,6 +41,7 @@
     "mobgriefing.villagersworkfarmland.HarvestFarmlandMixin",
     "mobgriefing.wololo.EvokerWololoSpellGoalMixin",
     "mobgriefing.zombiesbreakdoors.BreakDoorGoalMixin",
+    "tickrules.ServerLevelMixin",
     "universalanger.HurtByTargetGoalMixin",
     "universalanger.NeutralMobMixin",
     "universalanger.PiglinAiMixin",

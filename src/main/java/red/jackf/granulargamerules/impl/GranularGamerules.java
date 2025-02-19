@@ -7,10 +7,7 @@ import net.minecraft.world.level.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import red.jackf.granulargamerules.impl.config.GGConfig;
-import red.jackf.granulargamerules.impl.rules.MiscRules;
-import red.jackf.granulargamerules.impl.rules.MobGriefingRules;
-import red.jackf.granulargamerules.impl.rules.MobSpawningRules;
-import red.jackf.granulargamerules.impl.rules.UniversalAngerRules;
+import red.jackf.granulargamerules.impl.rules.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +34,7 @@ public class GranularGamerules implements ModInitializer {
 
         MobGriefingRules.setup();
         MobSpawningRules.setup();
+        TickRules.setup();
         UniversalAngerRules.setup();
         MiscRules.setup();
 
