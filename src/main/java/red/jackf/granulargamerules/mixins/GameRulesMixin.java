@@ -34,7 +34,7 @@ public abstract class GameRulesMixin implements GGGameRules {
     @Override
     public void gg$setDeferred(GameRules.Key<?> key, boolean isDeferred) {
         if (!GranularGamerules.isDeferrable(key)) {
-            GranularGamerules.LOGGER.warn("Tried to mark non-parented gamerule: {}", key.getId());
+            // GranularGamerules.LOGGER.warn("Tried to mark non-parented gamerule: {}", key.getId());
             return;
         }
 
