@@ -8,6 +8,7 @@
 		"JackFred"
 	],
 	"contact": {
+		"homepage": "https://modrinth.com/mod/granular-gamerules",
 		"issues": "https://github.com/JackFred2/GranularGamerules/issues",
 		"sources": "https://github.com/JackFred2/GranularGamerules"
 	},
@@ -50,7 +51,8 @@
 		"modmenu": {
 			"links": {
 				"modmenu.kofi": "https://ko-fi.com/jackfred",
-				"modmenu.wiki": "https://docs.jackf.red/granular-gamerules/"
+				"modmenu.wiki": "https://docs.jackf.red/granular-gamerules/",
+				"modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/granular-gamerules"
 			}
 		}
 	}
