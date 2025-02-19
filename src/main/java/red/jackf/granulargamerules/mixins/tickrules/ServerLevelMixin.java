@@ -14,8 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.profiling.Profiler;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.FarmBlock;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.LevelChunkSection;
@@ -58,14 +57,23 @@ public abstract class ServerLevelMixin extends Level {
         int minY = minChunkY.get();
         int minZ = chunk.getPos().getMinBlockZ();
 
-        for(int i = 0; i < TickRules.getMaxExtraTicks(this.getGameRules()); i++) {
+        // TODO calc once per server tick instead of once per subchunk
+        int maxExtra = TickRules.getMaxExtraTicks(this.getGameRules());
+        GameRules rules = this.getGameRules();
+
+        for(int i = 0; i < maxExtra; i++) {
             BlockPos pos = this.getBlockRandomPos(minX, minY, minZ, 15);
             Profiler.get().push("ggRandomTick");
             BlockState blockState = chunkSection.get().getBlockState(pos.getX() - minX, pos.getY() - minY, pos.getZ() - minZ);
+            Block block = blockState.getBlock();
 
             if (blockState.isRandomlyTicking()) {
-                if (i < this.getGameRules().getInt(TickRules.EXTRA_LEAF_TICKS) && blockState.getBlock() instanceof LeavesBlock
-                        || i < this.getGameRules().getInt(TickRules.EXTRA_FARMLAND_TICKS) && blockState.getBlock() instanceof FarmBlock) {
+                if (i < rules.getInt(TickRules.EXTRA_COPPER_TICKS) && block instanceof WeatheringCopper
+                        || i < rules.getInt(TickRules.EXTRA_CROP_TICKS) && blockState.is(TickRules.EXTRA_TICKABLE_CROPS_TAG)
+                        || i < rules.getInt(TickRules.EXTRA_LEAF_TICKS) && block instanceof LeavesBlock
+                        || i < rules.getInt(TickRules.EXTRA_FARMLAND_TICKS) && block instanceof FarmBlock
+                        || i < rules.getInt(TickRules.EXTRA_SAPLING_TICKS) && block instanceof SaplingBlock
+                        || i < rules.getInt(TickRules.EXTRA_SPREADING_TERRAIN_TICKS) && block instanceof SpreadingSnowyDirtBlock) {
                     blockState.randomTick((ServerLevel) (Object) this, pos, this.random);
                 }
             }
