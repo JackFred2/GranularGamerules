@@ -10,7 +10,7 @@ Grants you more control over the vanilla game rule system by:
 
 These are all done in a way that doesn't break datapacks, mods or server plugins that change game rules, while letting you 'pin' features on or off.
 
-There are 33 new sub-rules; for a full description of each see [the Wiki](https://docs.jackf.red/granular-gamerules).
+There are 37 new sub-rules, 3 miscellaneous rules and 8 `server.properties` rules; for a full description of each see [the Wiki](https://docs.jackf.red/granular-gamerules).
 
 <details>
 <summary>Full list of rules</summary>
@@ -41,6 +41,13 @@ There are 33 new sub-rules; for a full description of each see [the Wiki](https:
   - undergroundWaterCreature
   - waterAmbient
   - axolotl
+- randomTickSpeed
+  - extraCopperTicks
+  - extraCropTicks
+  - extraFarmlandTicks
+  - extraLeafTicks
+  - extraSaplingTicks
+  - extraSpreadingTerrainTicks
 - universalAnger
   - bees
   - endermen
@@ -70,6 +77,7 @@ There are 33 new sub-rules; for a full description of each see [the Wiki](https:
 
 - Removing underground players from the sleep vote - no longer prevented from sleeping due to miners.
 - Disabling thunder from the weather cycle.
+- Stopping players from trampling farmland.
 
 These are disabled by default, and details are available on the wiki.
 
