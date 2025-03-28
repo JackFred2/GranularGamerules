@@ -21,6 +21,9 @@ public class MobSpawningRules {
     public static final GameRules.Key<GameRules.BooleanValue> WATER_CREATURE = create("waterCreature");
     public static final GameRules.Key<GameRules.BooleanValue> WATER_AMBIENT = create("waterAmbient");
 
+    public static final GameRules.Key<GameRules.BooleanValue> FORCE_ENABLE_CREAKING_HEARTS
+            = Utils.createChild(GameRules.RULE_DOMOBSPAWNING, "forceEnableCreakingHearts", GameRuleFactory.createBooleanRule(false));
+
     public static final GameRules.Key<GameRules.BooleanValue> FORCE_ENABLE_TRIAL_SPAWNERS
             = Utils.createChild(GameRules.RULE_DOMOBSPAWNING, "forceEnableTrialSpawners", GameRuleFactory.createBooleanRule(false));
 

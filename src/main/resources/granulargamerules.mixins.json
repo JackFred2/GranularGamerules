@@ -6,6 +6,7 @@
     "GameRuleCommandMixin",
     "GameRulesMixin",
     "domobspawning.CatSpawnerMixin",
+    "domobspawning.CreakingHeartBlockEntityMixin",
     "domobspawning.NaturalSpawnerMixin",
     "domobspawning.NetherPortalBlockMixin",
     "domobspawning.ServerChunkCacheMixin",
