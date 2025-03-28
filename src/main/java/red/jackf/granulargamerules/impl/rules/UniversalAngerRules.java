@@ -3,7 +3,7 @@ package red.jackf.granulargamerules.impl.rules;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Wolf;
+import net.minecraft.world.entity.animal.wolf.Wolf;
 import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;

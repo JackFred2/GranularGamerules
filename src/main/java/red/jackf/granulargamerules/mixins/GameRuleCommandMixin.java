@@ -50,8 +50,7 @@ public class GameRuleCommandMixin {
         if (gameRules.hasValue() && args.length >= 2) {
             if (GranularGamerules.isDeferrable(key) && GGGameRules.isDeferred(gameRules.pop(), key)) {
                 Style style = Style.EMPTY.withColor(ChatFormatting.YELLOW)
-                        .withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-                                Component.literal(GranularGamerules.getDeferredParent(key).map(GameRules.Key::getId).orElse("<unknown parent>"))));
+                        .withHoverEvent(new HoverEvent.ShowText(Component.literal(GranularGamerules.getDeferredParent(key).map(GameRules.Key::getId).orElse("<unknown parent>"))));
 
                 args[1] = Component.literal(args[1].toString()).withStyle(style);
             }
