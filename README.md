@@ -66,8 +66,10 @@ There are 37 new sub-rules, 3 miscellaneous rules and 8 `server.properties` rule
   - viewDistance
   - entityBroadcastRangePercentage
 - doWeatherCycle/enableThunder
+- lavaSourceConversion/onlyInNetherBiomes
 - playersSleepingPercentage/countUnderground
 - playersTrampleFarmland
+- waterSourceConversion/onlyInWetBiomes
 
 </details>
 
@@ -78,6 +80,7 @@ There are 37 new sub-rules, 3 miscellaneous rules and 8 `server.properties` rule
 - Removing underground players from the sleep vote - no longer prevented from sleeping due to miners.
 - Disabling thunder from the weather cycle.
 - Stopping players from trampling farmland.
+- Filtering water & lava source conversions by biome
 
 These are disabled by default, and details are available on the wiki.
 
