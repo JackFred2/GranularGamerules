@@ -16,6 +16,7 @@
     "domobspawning.ZombieMixin",
     "miscrules.enablethunder.ServerLevelAccessor",
     "miscrules.enablethunder.ServerLevelMixin",
+    "miscrules.fluidsourceconversion.FlowingFluidMixin",
     "miscrules.playerstramplefarmland.FarmBlockMixin",
     "miscrules.sleepcountsbelowsurface.ServerPlayerMixin",
     "miscrules.sleepcountsbelowsurface.SleepStatusMixin",
