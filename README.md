@@ -1,3 +1,7 @@
+# Archived
+
+GG has been archived so I can stay focused on a smaller amount of mods for now. Given modern versions now have data-driven rules, and the ugliness of GG's client code it would make more sense to be a rewrite in the future.
+
 # 🌍 Granular Gamerules
 
 ![A meme explaining the mod - various vanilla gamerules such as mobGriefing are split into multiple.](https://cdn.modrinth.com/data/YFUweSka/images/949475b58bad6455b583f4d45051ff42acc6e0cb.png)
